@@ -34,10 +34,13 @@ import logging
 from copy import deepcopy
 from pprint import pprint
 import RPi.GPIO as GPIO
-import spi
+import array as ARRAY
 import tqdm
 import time
+import os.path
 import subprocess as SP
+
+import spi as SPI
 
 logger = logging.getLogger('litterbox')
 
@@ -276,15 +279,17 @@ class HardSpi:
     def setup(self):
         SP.call(['modprobe', '-r', self.spi_module])
         SP.call(['modprobe', self.spi_module])
-        self.spi = spi.SPI('/dev/spidev0.0')
-        self.spi.mode = spi.SPI.MODE_0
+        self.spi = SPI.SPI('/dev/spidev0.0')
+        self.spi.mode = SPI.SPI.MODE_0
         self.spi.bits_per_word = 8
         self.spi.speed = 100000000
 
+    def set_speed(self, speed):
+        self.spi.speed = speed
+
     def write(self, data):
-        PIECE_SIZE = 4096
-        for piece in (data[i:i+PIECE_SIZE] for i in xrange(0, len(data), PIECE_SIZE)):
-            self.spi.write(piece)
+        self.spi.write(data)
+        return
 
 class FPGA:
     def __init__(self, reset_pin, done_pin, cs_pin):
@@ -311,9 +316,15 @@ class FPGA:
         self.enable()
         self.spi.setup()
         try:
+            length = os.path.getsize(file)
             with open(file, 'rb') as f:
-                self.spi.write(bytearray(f.read()))
-                self.spi.write([0,0,0,0,0,0,0])
+                bits = ARRAY.array(str('B'))
+                try:
+                    bits.fromfile(f,length)
+                except EOFError:
+                    pass
+                bits.fromlist([0] * 7)
+                self.spi.write(bits)
         except IOError:
             print('IOError reading', file)
         print('FPGA configuration complete!' if self.done.input() else 'FPGA NOT CONFIGURED!')
@@ -323,5 +334,22 @@ class FPGA:
             while True:
                 self.configure(file)
                 print(time.time())
+        except KeyboardInterrupt:
+            pass
+
+    def speed_test(self, speed):
+        self.spi.set_speed(speed)
+        data = bytes(list(range(256)) * 4096 * 10)
+        num_bits = 8 * len(data)
+        tot_time = 0
+        tot_bits = 0
+        try:
+            while True:
+                start = time.time()
+                self.spi.write(data)
+                end = time.time()
+                tot_bits += num_bits
+                tot_time += (end-start)
+                print('bit rate = {} ({})'.format(num_bits / (end-start), tot_bits/tot_time))
         except KeyboardInterrupt:
             pass

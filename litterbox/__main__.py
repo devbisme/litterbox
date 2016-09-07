@@ -50,6 +50,7 @@ def main():
     parser.add_argument('-r', '--reset', action='store_true', help='Reset FPGA.')
     parser.add_argument('-d', '--debug', nargs='?', type=int, default=None, metavar='LEVEL', help='Print debugging info. (Larger LEVEL means more info.)')
     parser.add_argument('-t', '--test', nargs='?', type=str, metavar='file.bin', help='Run FPGA configuration test.')
+    parser.add_argument('-s', '--speedtest', nargs='?', type=str, metavar='speed', help='Test SPI bitrate.')
     parser.add_argument('--enable', action='store_true', help='Wake flash from deep power-down state.')
     parser.add_argument('--disable', action='store_true', help='Put flash into deep power-down state.')
     parser.add_argument('--reset_pin', nargs='?', type=int, metavar='pin#', default=22, help='Specify FPGA reset GPIO pin number.')
@@ -123,6 +124,10 @@ def main():
         if args.test:
             at25.start_deep_power_down()
             fpga.test(args.test)
+
+        if args.speedtest:
+            at25.start_deep_power_down()
+            fpga.speed_test(int(args.speedtest) * 1000000)
 
     except KeyboardInterrupt:
         pass

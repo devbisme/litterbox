@@ -22,6 +22,8 @@ You'll use it primarily to do three things:
 Command-Line Options
 ---------------------
 
+::
+
     usage: litterbox [-h] [-V] [-e] [-v [file.bin]] [-p [file.bin]]
                      [-c [file.bin]] [-r] [-d [LEVEL]] [-t [file.bin]] [--enable]
                      [--disable] [--reset_pin [pin#]] [--done_pin [pin#]]
@@ -45,6 +47,8 @@ Command-Line Options
                             Print debugging info. (Larger LEVEL means more info.)
       -t [file.bin], --test [file.bin]
                             Run FPGA configuration test.
+      -s [Mhz], --speedtest [Mhz]
+                            Run SPI link speed test.
       --enable              Wake flash from deep power-down state.
       --disable             Put flash into deep power-down state.
       --reset_pin [pin#]    Specify FPGA reset GPIO pin number.

@@ -21,7 +21,6 @@ requirements = [
     'future >= 0.15.0',
     'RPi.GPIO',
     'tqdm',
-    'spi',
 ]
 
 test_requirements = [

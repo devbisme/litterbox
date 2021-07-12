@@ -34,7 +34,7 @@ setup(
     long_description=readme + '\n\n' + history,
     author=litterbox.__author__,
     author_email=litterbox.__email__,
-    url='https://github.com/xesscorp/litterbox',
+    url='https://github.com/devbisme/litterbox',
 #    packages=['litterbox',],
     packages=setuptools.find_packages(),
     entry_points={'console_scripts':['litterbox = litterbox.__main__:main']},

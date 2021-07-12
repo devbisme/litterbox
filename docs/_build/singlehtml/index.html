@@ -1,35 +1,27 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
+<!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
   <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    
-    <title>litterbox 0.2.0 documentation</title>
-    
-    <link rel="stylesheet" href="_static/classic.css" type="text/css" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>litterbox 0.2.2 documentation</title>
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/classic.css" type="text/css" />
     
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    './',
-        VERSION:     '0.2.0',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true
-      };
-    </script>
-    <script type="text/javascript" src="_static/jquery.js"></script>
-    <script type="text/javascript" src="_static/underscore.js"></script>
-    <script type="text/javascript" src="_static/doctools.js"></script>
-    <link rel="top" title="None" href="index.html#document-index" /> 
-  </head>
-  <body role="document">
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
+  </head><body>
     <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
-        <li class="nav-item nav-item-0"><a href="index.html#document-index">litterbox 0.2.0 documentation</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="#">litterbox 0.2.2 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">litterbox 0.2.2 documentation</a></li> 
       </ul>
     </div>  
 
@@ -39,41 +31,38 @@
           <div class="body" role="main">
             
   <div class="section" id="welcome-to-litterbox-s-documentation">
-<h1>Welcome to litterbox&#8217;s documentation!<a class="headerlink" href="#welcome-to-litterbox-s-documentation" title="Permalink to this headline">¶</a></h1>
+<h1>Welcome to litterbox’s documentation!<a class="headerlink" href="#welcome-to-litterbox-s-documentation" title="Permalink to this headline">¶</a></h1>
 <p>Contents:</p>
 <div class="toctree-wrapper compound">
 <span id="document-readme"></span><div class="section" id="litterbox">
 <h2>litterbox<a class="headerlink" href="#litterbox" title="Permalink to this headline">¶</a></h2>
-<a class="reference external image-reference" href="https://pypi.python.org/pypi/litterbox"><img src="https://img.shields.io/pypi/v/litterbox.svg" /></a>
+<a class="reference external image-reference" href="https://pypi.python.org/pypi/litterbox"><img alt="https://img.shields.io/pypi/v/litterbox.svg" src="https://img.shields.io/pypi/v/litterbox.svg" /></a>
 <p>A set of tools to manage all the crap for the CAT Board.</p>
 <ul class="simple">
-<li>Free software: MIT license</li>
-<li>Documentation: <a class="reference external" href="http://xesscorp.github.io/litterbox">http://xesscorp.github.io/litterbox</a>.</li>
+<li><p>Free software: MIT license</p></li>
+<li><p>Documentation: <a class="reference external" href="http://devbisme.github.io/litterbox">http://devbisme.github.io/litterbox</a>.</p></li>
 </ul>
 <div class="section" id="features">
 <h3>Features<a class="headerlink" href="#features" title="Permalink to this headline">¶</a></h3>
-<ul>
-<li><p class="first">Configure the FPGA on the CAT Board with a bitstream file stored in the Raspberry Pi.</p>
-</li>
-<li><dl class="first docutils">
-<dt>Program the CAT Board serial flash with a bitstream that will be loaded</dt>
-<dd><p class="first last">into the FPGA upon power-up or reset.</p>
+<ul class="simple">
+<li><p>Configure the FPGA on the CAT Board with a bitstream file stored in the Raspberry Pi.</p></li>
+<li><dl class="simple">
+<dt>Program the CAT Board serial flash with a bitstream that will be loaded</dt><dd><p>into the FPGA upon power-up or reset.</p>
 </dd>
 </dl>
 </li>
-<li><p class="first">Erase the serial flash.</p>
-</li>
+<li><p>Erase the serial flash.</p></li>
 </ul>
 </div>
 </div>
 <span id="document-installation"></span><div class="section" id="installation">
 <h2>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h2>
 <p>At the command line:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span>$ easy_install litterbox
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ easy_install litterbox
 </pre></div>
 </div>
 <p>Or, if you have virtualenvwrapper installed:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span>$ mkvirtualenv litterbox
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ mkvirtualenv litterbox
 $ pip install litterbox
 </pre></div>
 </div>
@@ -81,20 +70,20 @@ $ pip install litterbox
 <span id="document-usage"></span><div class="section" id="usage">
 <h2>Usage<a class="headerlink" href="#usage" title="Permalink to this headline">¶</a></h2>
 <p>litterbox lets you control the CAT Board from the Raspberry Pi.
-You&#8217;ll use it primarily to do three things:</p>
+You’ll use it primarily to do three things:</p>
 <ol class="arabic">
-<li><p class="first">Configure the FPGA on the CAT Board with a bitstream file like so:</p>
+<li><p>Configure the FPGA on the CAT Board with a bitstream file like so:</p>
 <blockquote>
 <div><p>sudo litterbox -c filename.bin</p>
 </div></blockquote>
 </li>
-<li><p class="first">Store a bitstream file into the CAT Board serial flash that will be loaded
+<li><p>Store a bitstream file into the CAT Board serial flash that will be loaded
 into the FPGA whenever the board is powered on or reset:</p>
 <blockquote>
 <div><p>sudo litterbox -p filename.bin</p>
 </div></blockquote>
 </li>
-<li><p class="first">Erase the serial flash so the FPGA will no longer be configured by default:</p>
+<li><p>Erase the serial flash so the FPGA will no longer be configured by default:</p>
 <blockquote>
 <div><p>sudo litterbox -e</p>
 </div></blockquote>
@@ -102,7 +91,7 @@ into the FPGA whenever the board is powered on or reset:</p>
 </ol>
 <div class="section" id="command-line-options">
 <h3>Command-Line Options<a class="headerlink" href="#command-line-options" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">usage</span><span class="p">:</span> <span class="n">litterbox</span> <span class="p">[</span><span class="o">-</span><span class="n">h</span><span class="p">]</span> <span class="p">[</span><span class="o">-</span><span class="n">V</span><span class="p">]</span> <span class="p">[</span><span class="o">-</span><span class="n">e</span><span class="p">]</span> <span class="p">[</span><span class="o">-</span><span class="n">v</span> <span class="p">[</span><span class="n">file</span><span class="o">.</span><span class="n">bin</span><span class="p">]]</span> <span class="p">[</span><span class="o">-</span><span class="n">p</span> <span class="p">[</span><span class="n">file</span><span class="o">.</span><span class="n">bin</span><span class="p">]]</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">usage</span><span class="p">:</span> <span class="n">litterbox</span> <span class="p">[</span><span class="o">-</span><span class="n">h</span><span class="p">]</span> <span class="p">[</span><span class="o">-</span><span class="n">V</span><span class="p">]</span> <span class="p">[</span><span class="o">-</span><span class="n">e</span><span class="p">]</span> <span class="p">[</span><span class="o">-</span><span class="n">v</span> <span class="p">[</span><span class="n">file</span><span class="o">.</span><span class="n">bin</span><span class="p">]]</span> <span class="p">[</span><span class="o">-</span><span class="n">p</span> <span class="p">[</span><span class="n">file</span><span class="o">.</span><span class="n">bin</span><span class="p">]]</span>
                  <span class="p">[</span><span class="o">-</span><span class="n">c</span> <span class="p">[</span><span class="n">file</span><span class="o">.</span><span class="n">bin</span><span class="p">]]</span> <span class="p">[</span><span class="o">-</span><span class="n">r</span><span class="p">]</span> <span class="p">[</span><span class="o">-</span><span class="n">d</span> <span class="p">[</span><span class="n">LEVEL</span><span class="p">]]</span> <span class="p">[</span><span class="o">-</span><span class="n">t</span> <span class="p">[</span><span class="n">file</span><span class="o">.</span><span class="n">bin</span><span class="p">]]</span> <span class="p">[</span><span class="o">--</span><span class="n">enable</span><span class="p">]</span>
                  <span class="p">[</span><span class="o">--</span><span class="n">disable</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">reset_pin</span> <span class="p">[</span><span class="n">pin</span><span class="c1">#]] [--done_pin [pin#]]</span>
                  <span class="p">[</span><span class="o">--</span><span class="n">cs_pin</span> <span class="p">[</span><span class="n">pin</span><span class="c1">#]] [--clk_pin [pin#]] [--mosi_pin [pin#]]</span>
@@ -125,6 +114,8 @@ into the FPGA whenever the board is powered on or reset:</p>
                         <span class="n">Print</span> <span class="n">debugging</span> <span class="n">info</span><span class="o">.</span> <span class="p">(</span><span class="n">Larger</span> <span class="n">LEVEL</span> <span class="n">means</span> <span class="n">more</span> <span class="n">info</span><span class="o">.</span><span class="p">)</span>
   <span class="o">-</span><span class="n">t</span> <span class="p">[</span><span class="n">file</span><span class="o">.</span><span class="n">bin</span><span class="p">],</span> <span class="o">--</span><span class="n">test</span> <span class="p">[</span><span class="n">file</span><span class="o">.</span><span class="n">bin</span><span class="p">]</span>
                         <span class="n">Run</span> <span class="n">FPGA</span> <span class="n">configuration</span> <span class="n">test</span><span class="o">.</span>
+  <span class="o">-</span><span class="n">s</span> <span class="p">[</span><span class="n">Mhz</span><span class="p">],</span> <span class="o">--</span><span class="n">speedtest</span> <span class="p">[</span><span class="n">Mhz</span><span class="p">]</span>
+                        <span class="n">Run</span> <span class="n">SPI</span> <span class="n">link</span> <span class="n">speed</span> <span class="n">test</span><span class="o">.</span>
   <span class="o">--</span><span class="n">enable</span>              <span class="n">Wake</span> <span class="n">flash</span> <span class="kn">from</span> <span class="nn">deep</span> <span class="n">power</span><span class="o">-</span><span class="n">down</span> <span class="n">state</span><span class="o">.</span>
   <span class="o">--</span><span class="n">disable</span>             <span class="n">Put</span> <span class="n">flash</span> <span class="n">into</span> <span class="n">deep</span> <span class="n">power</span><span class="o">-</span><span class="n">down</span> <span class="n">state</span><span class="o">.</span>
   <span class="o">--</span><span class="n">reset_pin</span> <span class="p">[</span><span class="n">pin</span><span class="c1">#]    Specify FPGA reset GPIO pin number.</span>
@@ -146,22 +137,22 @@ little bit helps, and credit will always be given.</p>
 <h3>Types of Contributions<a class="headerlink" href="#types-of-contributions" title="Permalink to this headline">¶</a></h3>
 <div class="section" id="report-bugs">
 <h4>Report Bugs<a class="headerlink" href="#report-bugs" title="Permalink to this headline">¶</a></h4>
-<p>Report bugs at <a class="reference external" href="https://github.com/xesscorp/litterbox/issues">https://github.com/xesscorp/litterbox/issues</a>.</p>
+<p>Report bugs at <a class="reference external" href="https://github.com/devbisme/litterbox/issues">https://github.com/devbisme/litterbox/issues</a>.</p>
 <p>If you are reporting a bug, please include:</p>
 <ul class="simple">
-<li>Your operating system name and version.</li>
-<li>Any details about your local setup that might be helpful in troubleshooting.</li>
-<li>Detailed steps to reproduce the bug.</li>
+<li><p>Your operating system name and version.</p></li>
+<li><p>Any details about your local setup that might be helpful in troubleshooting.</p></li>
+<li><p>Detailed steps to reproduce the bug.</p></li>
 </ul>
 </div>
 <div class="section" id="fix-bugs">
 <h4>Fix Bugs<a class="headerlink" href="#fix-bugs" title="Permalink to this headline">¶</a></h4>
-<p>Look through the GitHub issues for bugs. Anything tagged with &#8220;bug&#8221;
+<p>Look through the GitHub issues for bugs. Anything tagged with “bug”
 is open to whoever wants to implement it.</p>
 </div>
 <div class="section" id="implement-features">
 <h4>Implement Features<a class="headerlink" href="#implement-features" title="Permalink to this headline">¶</a></h4>
-<p>Look through the GitHub issues for features. Anything tagged with &#8220;feature&#8221;
+<p>Look through the GitHub issues for features. Anything tagged with “feature”
 is open to whoever wants to implement it.</p>
 </div>
 <div class="section" id="write-documentation">
@@ -172,76 +163,74 @@ articles, and such.</p>
 </div>
 <div class="section" id="submit-feedback">
 <h4>Submit Feedback<a class="headerlink" href="#submit-feedback" title="Permalink to this headline">¶</a></h4>
-<p>The best way to send feedback is to file an issue at <a class="reference external" href="https://github.com/xesscorp/litterbox/issues">https://github.com/xesscorp/litterbox/issues</a>.</p>
+<p>The best way to send feedback is to file an issue at <a class="reference external" href="https://github.com/devbisme/litterbox/issues">https://github.com/devbisme/litterbox/issues</a>.</p>
 <p>If you are proposing a feature:</p>
 <ul class="simple">
-<li>Explain in detail how it would work.</li>
-<li>Keep the scope as narrow as possible, to make it easier to implement.</li>
-<li>Remember that this is a volunteer-driven project, and that contributions
-are welcome :)</li>
+<li><p>Explain in detail how it would work.</p></li>
+<li><p>Keep the scope as narrow as possible, to make it easier to implement.</p></li>
+<li><p>Remember that this is a volunteer-driven project, and that contributions
+are welcome :)</p></li>
 </ul>
 </div>
 </div>
 <div class="section" id="get-started">
 <h3>Get Started!<a class="headerlink" href="#get-started" title="Permalink to this headline">¶</a></h3>
-<p>Ready to contribute? Here&#8217;s how to set up <cite>litterbox</cite> for local development.</p>
+<p>Ready to contribute? Here’s how to set up <cite>litterbox</cite> for local development.</p>
 <ol class="arabic">
-<li><p class="first">Fork the <cite>litterbox</cite> repo on GitHub.</p>
-</li>
-<li><p class="first">Clone your fork locally:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span>$ git clone git@github.com:your_name_here/litterbox.git
+<li><p>Fork the <cite>litterbox</cite> repo on GitHub.</p></li>
+<li><p>Clone your fork locally:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ git clone git@github.com:your_name_here/litterbox.git
 </pre></div>
 </div>
 </li>
-<li><p class="first">Install your local copy into a virtualenv. Assuming you have virtualenvwrapper installed, this is how you set up your fork for local development:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span>$ mkvirtualenv litterbox
+<li><p>Install your local copy into a virtualenv. Assuming you have virtualenvwrapper installed, this is how you set up your fork for local development:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ mkvirtualenv litterbox
 $ cd litterbox/
 $ python setup.py develop
 </pre></div>
 </div>
 </li>
-<li><p class="first">Create a branch for local development:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span>$ git checkout -b name-of-your-bugfix-or-feature
+<li><p>Create a branch for local development:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ git checkout -b name-of-your-bugfix-or-feature
 </pre></div>
 </div>
 <p>Now you can make your changes locally.</p>
 </li>
-<li><p class="first">When you&#8217;re done making changes, check that your changes pass flake8 and the tests, including testing other Python versions with tox:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span>$ flake8 litterbox tests
+<li><p>When you’re done making changes, check that your changes pass flake8 and the tests, including testing other Python versions with tox:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ flake8 litterbox tests
 $ python setup.py test
 $ tox
 </pre></div>
 </div>
 <p>To get flake8 and tox, just pip install them into your virtualenv.</p>
 </li>
-<li><p class="first">Commit your changes and push your branch to GitHub:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span>$ git add .
+<li><p>Commit your changes and push your branch to GitHub:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ git add .
 $ git commit -m &quot;Your detailed description of your changes.&quot;
 $ git push origin name-of-your-bugfix-or-feature
 </pre></div>
 </div>
 </li>
-<li><p class="first">Submit a pull request through the GitHub website.</p>
-</li>
+<li><p>Submit a pull request through the GitHub website.</p></li>
 </ol>
 </div>
 <div class="section" id="pull-request-guidelines">
 <h3>Pull Request Guidelines<a class="headerlink" href="#pull-request-guidelines" title="Permalink to this headline">¶</a></h3>
 <p>Before you submit a pull request, check that it meets these guidelines:</p>
 <ol class="arabic simple">
-<li>The pull request should include tests.</li>
-<li>If the pull request adds functionality, the docs should be updated. Put
+<li><p>The pull request should include tests.</p></li>
+<li><p>If the pull request adds functionality, the docs should be updated. Put
 your new functionality into a function with a docstring, and add the
-feature to the list in README.rst.</li>
-<li>The pull request should work for Python 2.6, 2.7, 3.3, and 3.4, and for PyPy. Check
-<a class="reference external" href="https://travis-ci.org/xesscorp/litterbox/pull_requests">https://travis-ci.org/xesscorp/litterbox/pull_requests</a>
-and make sure that the tests pass for all supported Python versions.</li>
+feature to the list in README.rst.</p></li>
+<li><p>The pull request should work for Python 2.6, 2.7, 3.3, and 3.4, and for PyPy. Check
+<a class="reference external" href="https://travis-ci.org/devbisme/litterbox/pull_requests">https://travis-ci.org/devbisme/litterbox/pull_requests</a>
+and make sure that the tests pass for all supported Python versions.</p></li>
 </ol>
 </div>
 <div class="section" id="tips">
 <h3>Tips<a class="headerlink" href="#tips" title="Permalink to this headline">¶</a></h3>
 <p>To run a subset of tests:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span>$ python -m unittest tests.test_litterbox
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ python -m unittest tests.test_litterbox
 </pre></div>
 </div>
 </div>
@@ -251,7 +240,7 @@ and make sure that the tests pass for all supported Python versions.</li>
 <div class="section" id="development-lead">
 <h3>Development Lead<a class="headerlink" href="#development-lead" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
-<li>XESS Corp. &lt;<a class="reference external" href="mailto:info&#37;&#52;&#48;xess&#46;com">info<span>&#64;</span>xess<span>&#46;</span>com</a>&gt;</li>
+<li><p>Dave Vandenbout &lt;<a class="reference external" href="mailto:devb&#37;&#52;&#48;xess&#46;com">devb<span>&#64;</span>xess<span>&#46;</span>com</a>&gt;</p></li>
 </ul>
 </div>
 <div class="section" id="contributors">
@@ -262,15 +251,28 @@ and make sure that the tests pass for all supported Python versions.</li>
 <span id="document-history"></span><div class="section" id="history">
 <h2>History<a class="headerlink" href="#history" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="id1">
-<h3>0.2.0 (2016-09-07)<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<h3>0.2.2 (2021-07-12)<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
-<li>python-spi package was incorporated into litterbox and modified to increase transfer rates.</li>
+<li><p>Moved ownership from xesscorp to devbisme.</p></li>
 </ul>
 </div>
 <div class="section" id="id2">
-<h3>0.1.0 (2016-05-07)<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<h3>0.2.1 (2016-09-07)<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
-<li>First release on PyPI.</li>
+<li><p>Removed dependency on spi module (python-spi).</p></li>
+</ul>
+</div>
+<div class="section" id="id3">
+<h3>0.2.0 (2016-09-07)<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>python-spi package was incorporated into litterbox and modified to increase transfer rates.</p></li>
+<li><p>Documentation moved to Github pages.</p></li>
+</ul>
+</div>
+<div class="section" id="id4">
+<h3>0.1.0 (2016-05-07)<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>First release on PyPI.</p></li>
 </ul>
 </div>
 </div>
@@ -279,19 +281,20 @@ and make sure that the tests pass for all supported Python versions.</li>
 <div class="section" id="indices-and-tables">
 <h1>Indices and tables<a class="headerlink" href="#indices-and-tables" title="Permalink to this headline">¶</a></h1>
 <ul class="simple">
-<li><a class="reference internal" href="genindex.html"><span class="std std-ref">Index</span></a></li>
-<li><a class="reference internal" href="py-modindex.html"><span class="std std-ref">Module Index</span></a></li>
-<li><a class="reference internal" href="search.html"><span class="std std-ref">Search Page</span></a></li>
+<li><p><a class="reference internal" href="genindex.html"><span class="std std-ref">Index</span></a></p></li>
+<li><p><a class="reference internal" href="py-modindex.html"><span class="std std-ref">Module Index</span></a></p></li>
+<li><p><a class="reference internal" href="search.html"><span class="std std-ref">Search Page</span></a></p></li>
 </ul>
 </div>
 
 
+            <div class="clearer"></div>
           </div>
         </div>
       </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
-  <h3><a href="index.html#document-index">Table Of Contents</a></h3>
+  <h3><a href="#">Table of Contents</a></h3>
   <ul>
 <li class="toctree-l1"><a class="reference internal" href="index.html#document-readme">litterbox</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="index.html#features">Features</a></li>
@@ -315,8 +318,10 @@ and make sure that the tests pass for all supported Python versions.</li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="index.html#document-history">History</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="index.html#id1">0.2.0 (2016-09-07)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="index.html#id2">0.1.0 (2016-05-07)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#id1">0.2.2 (2021-07-12)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#id2">0.2.1 (2016-09-07)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#id3">0.2.0 (2016-09-07)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#id4">0.1.0 (2016-05-07)</a></li>
 </ul>
 </li>
 </ul>
@@ -328,12 +333,13 @@ and make sure that the tests pass for all supported Python versions.</li>
     <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
-        <li class="nav-item nav-item-0"><a href="index.html#document-index">litterbox 0.2.0 documentation</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="#">litterbox 0.2.2 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">litterbox 0.2.2 documentation</a></li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
-        &copy; Copyright 2016, XESS Corp..
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.4.
+        &#169; Copyright 2016-2021, Dave Vandenbout.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.5.4.
     </div>
   </body>
 </html>

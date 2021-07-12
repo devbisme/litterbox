@@ -9,7 +9,7 @@ litterbox
 A set of tools to manage all the crap for the CAT Board.
 
 * Free software: MIT license
-* Documentation: http://xesscorp.github.io/litterbox.
+* Documentation: http://devbisme.github.io/litterbox.
 
 Features
 --------
